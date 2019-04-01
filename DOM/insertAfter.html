@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div>
+    <i></i>
+    <p></p>
+    <b></b>
+    <span></span>
+  </div>
+</body>
+</html>
+
+<!-- 模仿系统的 insertBefore -->
+<script type="text/javascript">
+  // 采用原型链实现
+  Element.prototype.insertAfter = function (targetNode, afterNode) {
+    // 拿到前面的节点
+    var beforeNode = afterNode.nextElementSibling;
+    if (beforeNode) {
+      this.insertBefore(targetNode, beforeNode)
+    } else {
+      this.appendChild(targetNode)
+    }
+  }
+
+</script>

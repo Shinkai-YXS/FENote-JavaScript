@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>节点逆序</title>
+</head>
+<body>
+  <div>
+    <p></p>
+    <span></span>
+    <strong></strong>
+  </div>
+</body>
+</html>
+
+<script type="text/javascript">
+  let all = document.getElementsByTagName('div')[0]
+  let children = all.children
+  let len = children.length
+  while (len) {
+    len -= 1
+    all.appendChild(children[len])
+  }
+</script>

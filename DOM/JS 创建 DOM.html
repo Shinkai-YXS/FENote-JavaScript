@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS 创建 DOM</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+  var div = document.createElement('div')
+  var p = document.createElement('p')
+  div.setAttribute('class', 'example')
+  p.setAttribute('class', 'slogan')
+  var text = document.createTextNode('哈哈哈哈')
+  p.appendChild(text)
+  div.appendChild(p)
+  document.body.appendChild(div)
+</script>
