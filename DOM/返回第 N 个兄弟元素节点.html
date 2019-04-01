@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>返回第 N 个兄弟元素节点</title>
+</head>
+<body>
+  <div>
+    <div></div>
+    <span></span>
+    <p></p>
+  </div>
+</body>
+</html>
+<!--
+  封装函数
+  返回元素 e 的第 n 个兄弟元素节点
+  n 为正，返回后面的兄弟元素节点
+  n 为负，返回前面的
+  n 为 0，返回自己
+ -->
+<script type="text/javascript">
+  function retSibling(e, n) {
+    while (e && n) {
+      if (n > 0) {
+        // 判断是否有 nextElementSibling 这个方法，
+        // nextElementSibling 方法返回元素节点之后的节点，不包括文本节点、注释节点，但是其兼容性不好
+        if (e.nextElementSibling) {
+          e = e.nextElementSibling
+        } else {
+          // nextSibling 方法返回元素节点之后的节点，包括文本节点、注释节点，兼容性好
+          // 此处 for 循环：拿到节点，判断是否是元素节点，若不是元素节点，再循环，直到拿到元素节点为止
+          for (e = e.nextSibling; e && e.nodeType != 1; e = e.nextSibling);
+        }
+        n--;
+      } else {
+        // else 逻辑同上注释，拿元素之前的兄弟节点
+        if (e.previousElementSibling) {
+          e = e.previousElementSibling
+        } else {
+          for (e = e.previousSibling; e && e.nodeType != 1; e = e.previousSibling);
+        }
+        n++;
+      }
+    }
+    return e
+  }
+  let div = document.getElementsByTagName('div')[0]
+</script>
