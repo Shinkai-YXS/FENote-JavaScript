@@ -1,17 +1,21 @@
 {
-  "name": "fenote-css",
+  "name": "fenote-javascript",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "YXS",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "余小双",
-  "license": "ISC",
-  "dependencies": {
-    "browser-sync": "^2.23.6"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shinkai-YXS/FENote-JavaScript.git"
   },
-  "devDependencies": {
-    "gulp": "^3.9.1"
-  }
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shinkai-YXS/FENote-JavaScript/issues"
+  },
+  "homepage": "https://github.com/Shinkai-YXS/FENote-JavaScript#readme"
 }
